@@ -1,0 +1,21 @@
+
+<ng-container *ngIf="books.length>0 && !isLoading">
+  <h2>Book List</h2>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let book of books; trackBy: trackBooks">
+      <td>{{book?.id}}</td>
+      <td>{{book?.title}}</td>
+      <td>{{book?.author || "N/A"}}</td>
+      <td>{{book?.quantity || "N/A"}}</td>
+      <td></td>
+    </tr>
+  </table>
+</ng-container>
+
+<p *ngIf="isLoading">Loading.....</p>
